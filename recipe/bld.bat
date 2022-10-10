@@ -3,7 +3,7 @@
 call yarn pack || goto :error
 if errorlevel 1 exit 1
 
-call yarn licenses generate-disclaimer > ThirdPartyLicenses.txt
+call yarn licenses generate-disclaimer --prod > ThirdPartyLicenses.txt
 if errorlevel 1 exit 1
 
 call npm config set prefix %BUILD_PREFIX%
